@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CarsDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cars">
+          <Key>
+            <PropertyRef Name="sequentialnumber" />
+          </Key>
+          <Property Name="sequentialnumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="make" Type="nvarchar" MaxLength="150" />
+          <Property Name="model" Type="nvarchar" MaxLength="150" />
+          <Property Name="year" Type="nvarchar" MaxLength="150" />
+          <Property Name="msrp" Type="nvarchar" MaxLength="150" />
+          <Property Name="frontwheelsize" Type="nvarchar" MaxLength="150" />
+          <Property Name="horsepower" Type="nvarchar" MaxLength="150" />
+          <Property Name="displacement" Type="nvarchar" MaxLength="150" />
+          <Property Name="enginetype" Type="nvarchar" MaxLength="150" />
+          <Property Name="width" Type="nvarchar" MaxLength="150" />
+          <Property Name="height" Type="nvarchar" MaxLength="150" />
+          <Property Name="length" Type="nvarchar" MaxLength="150" />
+          <Property Name="gasmileage" Type="nvarchar" MaxLength="150" />
+          <Property Name="drivetrain" Type="nvarchar" MaxLength="150" />
+          <Property Name="passengercapacity" Type="nvarchar" MaxLength="150" />
+          <Property Name="passengerdoors" Type="nvarchar" MaxLength="150" />
+          <Property Name="bodystyle" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityContainer Name="CarsDatabaseModelStoreContainer">
+          <EntitySet Name="Cars" EntityType="Self.Cars" Schema="Scaffolding" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CarsDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="sequentialnumber" />
+          </Key>
+          <Property Name="sequentialnumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="make" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="year" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="msrp" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="frontwheelsize" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="horsepower" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="displacement" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="enginetype" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="width" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="height" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="length" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="gasmileage" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="drivetrain" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="passengercapacity" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="passengerdoors" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="bodystyle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="CarsDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cars" EntityType="Self.Car" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CarsDatabaseModelStoreContainer" CdmEntityContainer="CarsDatabaseEntities">
+          <EntitySetMapping Name="Cars">
+            <EntityTypeMapping TypeName="CarsDatabaseModel.Car">
+              <MappingFragment StoreEntitySet="Cars">
+                <ScalarProperty Name="sequentialnumber" ColumnName="sequentialnumber" />
+                <ScalarProperty Name="make" ColumnName="make" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="msrp" ColumnName="msrp" />
+                <ScalarProperty Name="frontwheelsize" ColumnName="frontwheelsize" />
+                <ScalarProperty Name="horsepower" ColumnName="horsepower" />
+                <ScalarProperty Name="displacement" ColumnName="displacement" />
+                <ScalarProperty Name="enginetype" ColumnName="enginetype" />
+                <ScalarProperty Name="width" ColumnName="width" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="length" ColumnName="length" />
+                <ScalarProperty Name="gasmileage" ColumnName="gasmileage" />
+                <ScalarProperty Name="drivetrain" ColumnName="drivetrain" />
+                <ScalarProperty Name="passengercapacity" ColumnName="passengercapacity" />
+                <ScalarProperty Name="passengerdoors" ColumnName="passengerdoors" />
+                <ScalarProperty Name="bodystyle" ColumnName="bodystyle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
